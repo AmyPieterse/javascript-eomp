@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+    font-family: 'Playfair Display', serif; 
+    background-color: #1D1B26;  
+    height: 100vh;                                 
+}
+#logo{
+    background: linear-gradient(90deg,#E00178, #FD2D01);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 1.6rem;
+    padding-left: 1rem;
+}
+nav{
+    background-color: #06191D;  
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    width: 100%;
+}
+#links{
+    display: none;
+}
+#nav_links{
+    margin: auto;
+}
+#nav_links ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+#nav_links a{
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+#nav_links a:hover{
+    text-decoration: underline;
+}
+#hamburgerButton{
+    display: none;
+}
+#cart, #searchIcon{
+    background-color:#06191D;
+    border:none;
+    color: white;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
+#displayProducts {
+    display: grid;
+    grid-gap:2rem;
+}
+.product{
+    background-color: #8860D0;
+}
+footer{
+    background-color: #06191D;  
+    font-size: .8rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: .8rem;
+    text-align: center;
+}
+@media screen and (max-width: 620px){
+    #logo{
+        padding: 0;
+    }
+	#hamburgerButton{
+        display: initial;
+    }
+    #hamburger{
+        background-color:#06191D;
+        border:none;
+        color: white;
+        padding-left:1rem;
+        cursor: pointer;
+    }
+    #
+    #nav_links{
+        display:none;
+    }
+    #searchNav{
+        display: none;
+    }
+    #searchMain{
+        display: initial;
+    }
+
+    #links.show{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        list-style: none;
+        padding: 1.5rem 2rem 2rem 2rem;
+        gap: 1rem;
+    }
+    #links a{
+        color: #aa9eb4;
+        text-decoration: none;
+    }
+}
+@media screen and (max-width: 750px){
+    #nav_links{
+      font-size: .8rem;
+    }
+    #logo h1{
+        font-size: 1.2rem;
+    }
+}
