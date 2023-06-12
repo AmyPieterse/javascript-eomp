@@ -7,7 +7,7 @@
 }
 body{
     color: white;
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Playfair Display', serif!important; 
     background-color: #1D1B26;  
     height: 100vh;                                 
 }
@@ -32,8 +32,8 @@ nav{
 #links{
     display: none;
 }
-#nav_links{
-    margin: auto;
+dl, ol, ul {
+    margin-bottom: 0 !important;
 }
 #nav_links ul{
     display: flex;
@@ -51,6 +51,20 @@ nav{
 #hamburgerButton{
     display: none;
 }
+#contactButton button {
+    display: flex;
+    justify-content: end;
+}
+#contact{
+    border:none;
+    color: white;
+    background-color: #1D1B26;
+    padding: 1rem;
+    cursor: pointer;
+}
+p {
+    margin-bottom: 0!important;
+}
 #cart, #searchIcon{
     background-color:#06191D;
     border:none;
@@ -58,14 +72,36 @@ nav{
     padding-right: 1rem;
     cursor: pointer;
 }
+#searchMain{
+    display: none;
+}
 
 #displayProducts {
     display: grid;
     grid-gap:2rem;
 }
+
 .product{
     background-color: #8860D0;
 }
+#newPost div{
+    display: flex;
+    flex-direction: column;
+    }
+
+table{
+    width: 60rem;
+    text-align: center;
+}
+table, th, td {
+    border: .1rem solid ;
+}
+td{
+word-wrap: break-word;
+width: 200px;
+}
+
+
 footer{
     background-color: #06191D;  
     font-size: .8rem;
@@ -89,7 +125,6 @@ footer{
         padding-left:1rem;
         cursor: pointer;
     }
-    #
     #nav_links{
         display:none;
     }

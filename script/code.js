@@ -10,20 +10,6 @@ function dropdown(){
         links.classList.add("show")  
     }
 }
-
-// let products = document.querySelector("#products.display_content")
-// products.innerHTML=""
-
-// products.forEach(products=>{
-//     products.innerHTML+=
-//     `
-//     <div class="card" style="width: 18rem;">
-//     <img src="..." class="card-img-top" alt="...">
-//         <div class="card-body">
-//         <h5 class="card-title">Card title</h5>
-//         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//         <a href="#" class="btn btn-primary">Go somewhere</a>
-//         </div>
-//     </div>
-//     `
-// })
+const displayProductCard=document.querySelector("#displayProducts");
+const editBtn=document.querySelector('#edtBtn');
+const deleteBtn=document.querySelector('#dltBtn');
