@@ -9,7 +9,8 @@ body{
     color: white;
     font-family: 'Playfair Display', serif!important; 
     background-color: #1D1B26;  
-    height: 100vh;                                 
+    height: 100vh; 
+    width: 100%;                 
 }
 #logo{
     background: linear-gradient(90deg,#E00178, #FD2D01);
@@ -64,6 +65,7 @@ dl, ol, ul {
 }
 p {
     margin-bottom: 0!important;
+    color: white;
 }
 #cart, #searchIcon{
     background-color:#06191D;
@@ -76,14 +78,15 @@ p {
     display: none;
 }
 
-#displayProducts {
-    display: grid;
-    grid-gap:2rem;
-}
-
-.product{
+#displayProducts .product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 40px;
+    box-shadow: 0 2px 5px #aa9eb4;
     background-color: #8860D0;
 }
+
 #newPost div{
     display: flex;
     flex-direction: column;
