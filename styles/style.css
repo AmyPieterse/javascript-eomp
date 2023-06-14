@@ -5,41 +5,36 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
-    color: white;
+    color: white !important;
     font-family: 'Playfair Display', serif!important; 
-    background-color: #1D1B26;  
-    height: 100vh; 
-    width: 100%;                 
+    background-color: #1D1B26 !important;  
+    width: 100%;  
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;               
 }
-#logo{
-    background: linear-gradient(90deg,#E00178, #FD2D01);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    font-size: 1.6rem;
-    padding-left: 1rem;
-}
+
 nav{
     background-color: #06191D; 
+    width: 100%;
+    padding: .5rem 1rem .5rem 1rem;
 }
 
 .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .5rem;
-    width: 100%;
 }
+
 #links{
     display: none;
-}
-dl, ol, ul {
-    margin-bottom: 0 !important;
 }
 #nav_links ul{
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem;
 }
 #nav_links a{
     font-size: 1rem;
@@ -49,20 +44,58 @@ dl, ol, ul {
 #nav_links a:hover{
     text-decoration: underline;
 }
+#logo{
+    background: linear-gradient(90deg,#E00178, #FD2D01);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 1.6rem;
+}
 #hamburgerButton{
     display: none;
 }
-#displayProducts{
-    margin: 2rem;
+#cart, #searchIcon{
+    background-color:#06191D;
+    border:none;
+    color: white;
+    padding-right: 1rem;
+    cursor: pointer;
 }
-.product{ 
-    margin: .4rem;
+#searchMain{
+    display: none;
+}
+#aboutSection, #contactSection{
+    height: 100vh;
+}
+#contactSection{
+    background-color:aqua;
+}
+
+dl, ol, ul {
+    margin-bottom: 0 !important;
+}
+
+#displayProducts{
+    max-width: max-content;
+    margin: 0;
+}
+#displayProducts .row{
+    margin: 2.5rem auto 1rem auto;
+}
+#displayProducts .product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 40px;
+    box-shadow: 0 2px 5px #aa9eb4;
+    background-color: #8860D0;
+    margin: .5rem;
+    width: 18rem;
 }
 
 #contactButton{
     margin-top: 1rem;
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 #contactButton button {
     display: flex;
@@ -75,60 +108,48 @@ dl, ol, ul {
     padding: 1rem 2rem;
     cursor: pointer;
 }
+#contactForm h3{
+    text-align: center;
+}
+
+#contactForm{
+    width: 40%;
+}
+
 p {
     margin-bottom: 0!important;
     color: white;
 }
-#cart, #searchIcon{
-    background-color:#06191D;
-    border:none;
-    color: white;
-    padding-right: 1rem;
-    cursor: pointer;
-}
-#searchMain{
-    display: none;
-}
-
-#displayProducts .product{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 20px 40px;
-    box-shadow: 0 2px 5px #aa9eb4;
-    background-color: #8860D0;
-}
-
-#newPost div{
-    display: flex;
-    flex-direction: column;
-    }
 
 table{
     width: 60rem;
     text-align: center;
 }
+
 table, th, td {
-    border: .1rem solid ;
+    border: .1rem solid white;
 }
+
 td{
 word-wrap: break-word;
 width: 200px;
 }
-
+#cartProducts, #summaryPricing{
+    border: 1px solid aqua;
+    background-color: bg;
+}
 
 footer{
     background-color: #06191D;  
     font-size: .8rem;
+    margin-top: auto;
     bottom: 0;
     width: 100%;
     padding: .8rem;
     text-align: center;
 }
+
 @media screen and (max-width: 620px){
-    #logo{
-        padding: 0;
-    }
 	#hamburgerButton{
         display: initial;
     }
@@ -161,12 +182,27 @@ footer{
         color: #aa9eb4;
         text-decoration: none;
     }
+
+    #contactForm div{
+        width: 100% !important;
+    }
+
 }
 @media screen and (max-width: 750px){
+    #logo{
+        font-size: 1.5rem;
+    }
+    #contactForm{
+        width: 100%;
+    }
     #nav_links{
-      font-size: .8rem;
+        font-size: .8rem;
     }
-    #logo h1{
-        font-size: 1.2rem;
+    #searchNav{
+        display: none;
     }
+    #searchMain{
+        display: initial;
+    }
+    
 }

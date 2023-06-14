@@ -59,20 +59,14 @@ function renderProducts() {
                 <td>${product.name}</td>
                 <td>${product.description}</td>
                 <td>${product.price}</td>
-                <td><div id="buttons">
-                <button data-bs-toggle="modal" data-bs-target="#editModal${
-                  product.id
-                }" id="edtBtn${product.id}">Edit</button>
-                <button id="dltBtn" onclick="deleteProduct(${
-                  product.id
-                })">Delete</button
-                div>
+                <td>
+                <div id="buttons">
+                <button data-bs-toggle="modal" data-bs-target="#editModal${product.id}" id="edtBtn${product.id}">Edit</button>
+                <button id="dltBtn" onclick="deleteProduct(${product.id})">Delete</button
+                </div>
                 </td>
                 </tr>
-                <div class="modal fade" id="editModal${
-                  product.id
-                }" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-                aria-hidden="true">
+                <div class="modal fade bg-dark" id="editModal${product.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -85,27 +79,19 @@ function renderProducts() {
                     <form id="newPost">
                         <div>
                         <label for="title">Name:</label>
-                        <input type="text" id='name${
-                          product.id
-                        }' name="title" value="${product.name}"/>
+                        <input type="text" id='name${product.id}' name="title" value="${product.name}"/>
                         </div>
                         <div>
                             <label for="description">Description</label>
-                            <input type="text" id='description${
-                              product.id
-                            }' name="description" value="${product.description}"/>
+                            <input type="text" id='description${product.id}' name="description" value="${product.description}"/>
                         </div>
                         <div>
                         <label for="image">Image:</label>
-                        <input type="url" id='image${
-                          product.id
-                        }' name="uploadImage" value="${product.image}"/>
+                        <input type="url" id='image${product.id}' name="uploadImage" value="${product.image}"/>
                         </div>
                         <div>
                         <label for="price">Price:</label>
-                        <input type="text" id='price${product.id}' name="price${
-      product.id
-    }" value="${product.price}"/>
+                        <input type="text" id='price${product.id}' name="price${product.id}" value="${product.price}"/>
                         </div>
                     </form>
                     </div>
@@ -113,16 +99,13 @@ function renderProducts() {
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                         CANCEL
                     </button>
-                    <button type="button" class="btn btn-primary" id="editBtn" onclick='new EditedData(${JSON.stringify(
-                      product
-                    )})'>
+                    <button type="button" class="btn btn-primary" id="editBtn" onclick='new EditedData(${JSON.stringify(product)})'>
                         EDIT PRODUCT
                     </button>
                     </div>
                 </div>
-                </div>
-                </div>
-                `;
+              </div>
+              </div>`;
   });
 }
 
