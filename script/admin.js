@@ -1,8 +1,19 @@
-let products = [];
+
 const btnAddProduct = document.querySelector("#addProduct");
-const displayProducts = document.querySelector("#display");
+const displayTProducts = document.querySelector("#display");
 const editBtn = document.querySelector("#edtBtn");
 const deleteBtn = document.querySelector("#dltBtn");
+
+
+let arrDisplay=;
+
+let string = localStorage.getItem("products");
+
+if (string) {
+  arrDisplay = JSON.parse(string);
+} else {
+  arrDisplay = [];
+}
 
 btnAddProduct.addEventListener("click", addNewProduct);
 
@@ -14,23 +25,23 @@ function addNewProduct() {
   let productPrice = document.querySelector("#price").value;
 
   let product = {
-    id: products.length + 1,
+    id: arrDisplay.length + 1,
     name: productName,
     image: productImage,
     description: productDescription,
     price: productPrice,
   };
-  products.push(product);
-  localStorage.setItem("products", JSON.stringify(products));
+  arrDisplay.push(product);
+  localStorage.setItem("products", JSON.stringify(arrDisplay));
   renderProducts();
 }
 
 //delete Product from array products
 function deleteProduct(item) {
-  let index = products.findIndex((p) => {
+  let index = arrDisplay.findIndex((p) => {
     return p.id == item.id;
   });
-  products.splice(index, 1);
+  arrDisplay.splice(index, 1);
   renderProducts();
 }
 
@@ -42,18 +53,20 @@ function EditedData(item) {
   this.image = document.querySelector(`#image${item.id}`).value;
   this.price = document.querySelector(`#price${item.id}`).value;
 
-  let index = products.findIndex((p) => {
+  let index = arrDisplay.findIndex((p) => {
     return p.id == item.id;
   });
-  products[index] = Object.assign({}, this);
+  arrDisplay[index] = Object.assign({}, this);
   renderProducts();
 }
 
 //Display array products in table
 function renderProducts() {
-  displayProducts.innerHTML = "";
-  products.forEach((product) => {
-    displayProducts.innerHTML += `
+
+  displayTDisplay.innerHTML = "";
+
+  arrDisplay.forEach((product) => {
+    displayTProducts.innerHTML += `
                 <tr>
                 <td>${product.id}</td>
                 <td>${product.name}</td>
