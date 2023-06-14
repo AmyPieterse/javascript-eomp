@@ -20,7 +20,7 @@ body{
     padding-left: 1rem;
 }
 nav{
-    background-color: #06191D;  
+    background-color: #06191D; 
 }
 
 .navbar{
@@ -52,6 +52,18 @@ dl, ol, ul {
 #hamburgerButton{
     display: none;
 }
+#displayProducts{
+    margin: 2rem;
+}
+.product{ 
+    margin: .4rem;
+}
+
+#contactButton{
+    margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
 #contactButton button {
     display: flex;
     justify-content: end;
@@ -60,7 +72,7 @@ dl, ol, ul {
     border:none;
     color: white;
     background-color: #1D1B26;
-    padding: 1rem;
+    padding: 1rem 2rem;
     cursor: pointer;
 }
 p {
@@ -108,7 +120,6 @@ width: 200px;
 footer{
     background-color: #06191D;  
     font-size: .8rem;
-    position: fixed;
     bottom: 0;
     width: 100%;
     padding: .8rem;
