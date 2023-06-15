@@ -244,6 +244,7 @@ footer{
         color: #aa9eb4;
         text-decoration: none;
     }
+    
 
     #contactForm div{
         width: 100% !important;
@@ -271,6 +272,14 @@ footer{
     #searchMain button{
         background-color: #1D1B26;
         margin-left:.3rem;
+    }
+    #cartDisplayProducts li{
+        display: flex;
+        flex-direction: column;
+    }
+    #checkout {
+        display: flex;
+        flex-direction: column;
     }
     
 }
