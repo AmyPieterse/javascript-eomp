@@ -101,14 +101,17 @@ localStorage.setItem('products',
   
   displayProducts();
 
-function addCart(newProductId){
 
-  let newProduct = products.find((p)=>{
-    return p.id === newProductId
-  })
-  arrCart.push(newProduct);
-  localStorage.setItem("cart", JSON.stringify(arrCart));
-  cartCount.innerHTML=arrCart.length
+function addCart(newProductId) {
+  let newProduct = products.find((p) => {
+    return p.id === newProductId;
+  });
+
+  if (newProduct) {
+    arrCart.push(newProduct);
+    localStorage.setItem("cart", JSON.stringify(arrCart));
+    cartCount.innerHTML = arrCart.length;
+  }
 }
 
 
