@@ -56,7 +56,7 @@ function EditedData(item) {
   arrDisplay[index] = Object.assign({}, this);
   localStorage.setItem('products', JSON.stringify(arrDisplay))
   renderProducts();
-  // location.reload()  
+  location.reload()  
 }
 
 //Display array products in table

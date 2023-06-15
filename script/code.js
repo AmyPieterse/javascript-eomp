@@ -17,6 +17,7 @@ function dropdown(){
 
 let products = JSON.parse(localStorage.getItem('products')) ?
 JSON.parse(localStorage.getItem('products')) : 
+
 localStorage.setItem('products', 
   JSON.stringify(
     [

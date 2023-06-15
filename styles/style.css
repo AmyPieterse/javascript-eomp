@@ -9,7 +9,7 @@
 body{
     color: white !important;
     font-family: 'Playfair Display', serif!important; 
-    background-color: #1D1B26 !important;  
+    background-color: #7b7b83 !important;  
     width: 100%;         
 }
 main{
@@ -28,7 +28,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    --bs-navbar-padding-y: 0;
+    --bs-navbar-padding-y: 0 !important;
 }
 
 #links{
@@ -63,6 +63,10 @@ nav{
     padding-right: 1rem;
     cursor: pointer;
 }
+#mainModal{
+    display: flex;
+    align-items: center;
+}
 
 #searchMain{
     display: none;
@@ -86,7 +90,7 @@ nav{
     align-items: center;
 }
 #contactSection{
-    background-color:aqua;
+    background-color:#7b7b83;
 }
 
 dl, ol, ul {
@@ -124,7 +128,7 @@ dl, ol, ul {
 #contact{
     border:none;
     color: white;
-    background-color: #1D1B26;
+    background-color:inherit;
     padding: 1rem 2rem;
     cursor: pointer;
     font-size: 1.3rem;
