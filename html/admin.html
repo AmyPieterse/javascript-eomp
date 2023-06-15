@@ -22,7 +22,7 @@
         <div id="logo">
           <h1><a href="../index.html">WatchCo</a></h1>
         </div>
-          <div id="nav_links">
+          <div id="navLinks">
             <ul>
               <li><a href="./products.html">Products</a></li>
               <li><a href="./admin.html">Admin</a></li>
@@ -47,17 +47,9 @@
         Sort Products
       </button>
 
-      <div
-        class="modal fade"
-        id="staticBackdrop"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="staticBackdropLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable bg-dark">
-          <div class="modal-content">
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content text-black">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">
                 NEW PRODUCT
@@ -72,15 +64,19 @@
             <div class="modal-body">
               <form id="newPost">
                 <div>
-                  <label for="title">Name:</label>
-                  <input type="text" id="name" name="title" />
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name"/>
                 </div>
                 <div>
-                  <label for="description">Description</label>
-                  <input type="text" id="description" name="description" />
+                  <label for="brand">Brand</label>
+                  <input type="text" id="brand" name="brand"/>
                 </div>
                 <div>
-                  <label for="image">Image:</label>
+                  <label for="description">Description:</label>
+                  <textarea  id="description" name="description" rows="5"></textarea>
+                </div>
+                <div>
+                  <label for="image">Image(url):</label>
                   <input type="url" id="image" name="uploadImage" />
                 </div>
                 <div>
@@ -109,7 +105,9 @@
         <thead>
           <tr>
             <th>#</th>
+            <th>Brand</th>
             <th>Name</th>
+            <th>Image</th>
             <th>Description</th>
             <th>Price</th>
             <th>Edit/Delete</th>

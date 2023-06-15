@@ -25,7 +25,7 @@
           <h1><a href="../index.html">WatchCo</a></h1>
         </div>
 
-        <div id="nav_links">
+        <div id="navLinks">
           <ul>
             <li><a href="./html/products.html">Products</a></li>
             <li><a href="./html/admin.html">Admin</a></li>
@@ -34,8 +34,10 @@
         </div>
 
         <div id="searchNav">
-          <input type="text" />
-          <button id="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <div>
+            <input type="text"/>
+            <button id="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
         </div>
         <div id="cartButton">
           <button id="cart">
@@ -53,55 +55,48 @@
     </nav>
 
     <main class="container-fluid index">
-      <div class="row" id="searchMain">
+      <div id="searchMain">
         <input type="text" />
         <button id="searchIcon">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
       <section id="aboutSection">
-        <h1>
-          Welcome to WatchCo, where affordable luxury meets timeless style
-        </h1>
-        <p><span>Discover a word of exquisite timepieces</span></p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi laborum
-          officia temporibus enim odit accusantium id harum amet, magni soluta!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius
-          necessitatibus provident est laborum magnam modi suscipit unde
-          repudiandae, aliquid sequi. Dolor aliquid a consectetur provident, et
-          totam rerum doloribus eum?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ea,
-          cupiditate consectetur sunt nostrum voluptate ex accusamus, ad tenetur
-          non, dolores commodi rerum tempore ipsa maxime molestiae pariatur
-          libero quos.
-        </p>
+        <div class="container">
+          <h1>
+            Welcome to WatchCo,<br> where affordable luxury meets timeless style
+          </h1>
+          <p><span>Discover a word of exquisite timepieces</span></p>
+        </div>
+        <div class="container">
+          <h2>Featured Products</h2>
+          <div id="displayFeatured">
+
+          </div>
+        </div>
+        <div class="container">
+          <a href="#contact"><button id="downbutton">Contact Us</button></a>
+        </div>
       </section>
 
       <section id="contactSection">
-        <div class="d-flex justify-content-center">
-          <form
-            id="contactForm"
-            class="d-flex justify-content-center align-items-center flex-column bg-dark p-2"
-          >
-            <h3 class="mb-3">Contact Us</h3>
+        <div class="d-flex justify-content-center mt-5">
+          <form id="contactForm" class="d-flex justify-content-center align-items-center flex-column bg-dark p-2" action="https://formspree.io/f/xgebdrnn" method="post">
+            <h3 id="contact" class="mb-3 bg-dark">Contact Us</h3>
             <div class="mb-2 w-75">
               <label for="inputFirstName" class="form-label">First Name</label>
-              <input type="text" class="form-control" id="inputFirstName" />
+              <input type="text" name="firstName" class="form-control" id="inputFirstName" />
             </div>
             <div class="mb-2 w-75">
               <label for="inputLastName" class="form-label">Last Name</label>
-              <input type="text" class="form-control" id="inputLastName" />
+              <input type="text" name="lastName" class="form-control" id="inputLastName" />
             </div>
             <div class="mb-2 w-75">
               <label for="inputEmail" class="form-label">Email address</label>
               <input
                 type="email"
                 class="form-control"
+                name="email"
                 id="inputEmail"
                 aria-describedby="emailHelp"
               />
@@ -110,10 +105,11 @@
               </div>
             </div>
             <div class="mb-2 w-75">
-              <label for="inputMessage" class="form-label">Message</label>
+              <label for="inputMessage" class="form-label">Your Message</label>
               <textarea
                 class="form-control"
                 id="inputMessage"
+                name="message"
                 rows="3"
               ></textarea>
             </div>

@@ -5,20 +5,14 @@ const editBtn = document.querySelector("#edtBtn");
 const deleteBtn = document.querySelector("#dltBtn");
 
 
-let arrDisplay=;
+let arrDisplay = JSON.parse(localStorage.getItem("products")) || [];
 
-let string = localStorage.getItem("products");
-
-if (string) {
-  arrDisplay = JSON.parse(string);
-} else {
-  arrDisplay = [];
-}
 
 btnAddProduct.addEventListener("click", addNewProduct);
 
 //add new product object to array products
 function addNewProduct() {
+  let productBrand = document.querySelector("#brand").value;
   let productName = document.querySelector("#name").value;
   let productImage = document.querySelector("#image").value;
   let productDescription = document.querySelector("#description").value;
@@ -26,6 +20,7 @@ function addNewProduct() {
 
   let product = {
     id: arrDisplay.length + 1,
+    brand:productBrand,
     name: productName,
     image: productImage,
     description: productDescription,
@@ -42,11 +37,13 @@ function deleteProduct(item) {
     return p.id == item.id;
   });
   arrDisplay.splice(index, 1);
+  localStorage.setItem('products', JSON.stringify(arrDisplay))
   renderProducts();
 }
 
 // Constructor function
 function EditedData(item) {
+  console.log(this)
   this.id = item.id;
   this.name = document.querySelector(`#name${item.id}`).value;
   this.description = document.querySelector(`#description${item.id}`).value;
@@ -57,29 +54,33 @@ function EditedData(item) {
     return p.id == item.id;
   });
   arrDisplay[index] = Object.assign({}, this);
+  localStorage.setItem('products', JSON.stringify(arrDisplay))
   renderProducts();
+  // location.reload()  
 }
 
 //Display array products in table
 function renderProducts() {
 
-  displayTDisplay.innerHTML = "";
+  displayTProducts.innerHTML = "";
 
   arrDisplay.forEach((product) => {
     displayTProducts.innerHTML += `
                 <tr>
                 <td>${product.id}</td>
+                <td>${product.brand}</td>
                 <td>${product.name}</td>
+                <td><img src="${product.image}" alt="" loading="lazy""></img></td>
                 <td>${product.description}</td>
                 <td>${product.price}</td>
                 <td>
                 <div id="buttons">
                 <button data-bs-toggle="modal" data-bs-target="#editModal${product.id}" id="edtBtn${product.id}">Edit</button>
-                <button id="dltBtn" onclick="deleteProduct(${product.id})">Delete</button
+                <button id="dltBtn" onclick="deleteProduct(${product.id})">Remove</button
                 </div>
                 </td>
                 </tr>
-                <div class="modal fade bg-dark" id="editModal${product.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"aria-hidden="true">
+                <div class="modal fade" id="editModal${product.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -121,4 +122,5 @@ function renderProducts() {
               </div>`;
   });
 }
+renderProducts()
 

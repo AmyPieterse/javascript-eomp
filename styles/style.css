@@ -10,10 +10,12 @@ body{
     color: white !important;
     font-family: 'Playfair Display', serif!important; 
     background-color: #1D1B26 !important;  
-    width: 100%;  
+    width: 100%;         
+}
+main{
     min-height: 100vh; 
     display: flex;
-    flex-direction: column;               
+    flex-direction: column;  
 }
 
 nav{
@@ -26,22 +28,23 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    --bs-navbar-padding-y: 0;
 }
 
 #links{
     display: none;
 }
-#nav_links ul{
+#navLinks ul{
     display: flex;
     list-style: none;
     gap: 1rem;
 }
-#nav_links a{
+#navLinks a{
     font-size: 1rem;
     color: white;
     text-decoration: none;
 }
-#nav_links a:hover{
+#navLinks a:hover{
     text-decoration: underline;
 }
 #logo{
@@ -60,11 +63,27 @@ nav{
     padding-right: 1rem;
     cursor: pointer;
 }
+
 #searchMain{
     display: none;
 }
+
 #aboutSection, #contactSection{
     height: 100vh;
+}
+
+#aboutSection{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    gap: 2rem;
+}
+#aboutSection .container{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    text-align: center; 
+    align-items: center;
 }
 #contactSection{
     background-color:aqua;
@@ -101,13 +120,16 @@ dl, ol, ul {
     display: flex;
     justify-content: end;
 }
+
 #contact{
     border:none;
     color: white;
     background-color: #1D1B26;
     padding: 1rem 2rem;
     cursor: pointer;
+    font-size: 1.3rem;
 }
+
 #contactForm h3{
     text-align: center;
 }
@@ -125,6 +147,15 @@ table{
     width: 60rem;
     text-align: center;
 }
+#display img{
+    width: 5rem;
+    height: 5.5rem;
+}
+#newPost div{
+    display: flex;
+    flex-direction: column;
+    }
+
 
 table, th, td {
     border: .1rem solid white;
@@ -135,8 +166,35 @@ word-wrap: break-word;
 width: 200px;
 }
 #cartProducts, #summaryPricing{
-    border: 1px solid aqua;
     background-color: bg;
+}
+#quantityform{
+    text-align: center;
+    padding: 5px;
+    border: 1px dotted #ccc;
+    margin: .3rem;
+}
+.qty {
+    width: 2rem;
+    height: 25px;
+    text-align: center;
+}
+
+input.plus { 
+    width:1.8rem; 
+    height:1.8rem;
+}
+input.minus { 
+    width:1.8rem; 
+    height:1.8rem;
+}
+#cartDltBtn{
+    border: none; 
+    background-color: transparent;
+    margin: .8rem;
+}
+#cartDltBtn:hover{
+    text-decoration: underline;
 }
 
 footer{
@@ -160,7 +218,7 @@ footer{
         padding-left:1rem;
         cursor: pointer;
     }
-    #nav_links{
+    #navLinks{
         display:none;
     }
     #searchNav{
@@ -195,14 +253,20 @@ footer{
     #contactForm{
         width: 100%;
     }
-    #nav_links{
+    #navLinks{
         font-size: .8rem;
     }
     #searchNav{
         display: none;
     }
     #searchMain{
-        display: initial;
+        display: flex;
+        justify-content: flex-end;
+        margin: 1rem;
+    }
+    #searchMain button{
+        background-color: #1D1B26;
+        margin-left:.3rem;
     }
     
 }
